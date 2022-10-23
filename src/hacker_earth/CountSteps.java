@@ -1,5 +1,6 @@
 package hacker_earth;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 class CountSteps {
@@ -13,15 +14,11 @@ class CountSteps {
             a[i] = sc.nextInt();
 
         }
-//        System.out.println(a);
         for(int i=0; i<n; i++){
-            System.out.println(b);
+            System.out.println(Arrays.toString(b));
 
             b[i] = sc.nextInt();
         }
-//        System.out.println(b);
-
-//        sc.close();
         int steps = countSteps(a, b);
         System.out.println(steps);
     }
