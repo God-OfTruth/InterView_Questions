@@ -53,13 +53,13 @@ class Test {
                 for (int k = 0; k < num.length(); k++) {
                     totStick = totStick + countReturn(num.charAt(k));
                 }
-                String MaxNum = "";
+                StringBuilder MaxNum = new StringBuilder();
                 if (totStick % 2 == 1) {
-                    MaxNum = MaxNum + "7";
+                    MaxNum.append("7");
                     totStick = totStick - 3;
                 }
                 for (int j = 0; j < (totStick / 2); j++) {
-                    MaxNum = MaxNum + "1";
+                    MaxNum.append("1");
                 }
                 System.out.println(MaxNum);
             }

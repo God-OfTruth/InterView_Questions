@@ -32,10 +32,10 @@ public class BracketBalance {
                     if (arr[i] == ']') balance.pop();
                     else balance.push(arr[i]);
                 }
-//                default -> {
-//                    System.out.println(balance.peek() + " - " + arr[i]);
-//                    balance.push(arr[i]);
-//                }
+                default -> {
+                    System.out.println(balance.peek() + " - " + arr[i]);
+                    balance.push(arr[i]);
+                }
             }
         }
         return balance.isEmpty();

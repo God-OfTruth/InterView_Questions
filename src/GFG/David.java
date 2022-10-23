@@ -19,7 +19,7 @@ public class David {
             arr.add(0,1);
             arr.add(1,2);
             arr.add(2,3);
-            int x=0;
+            int x;
             for(int i=3;i<input1;i++) {
                 x =arr.get(i-3)+arr.get(i-2)+arr.get(i-1);
                 arr.add(i,x);
