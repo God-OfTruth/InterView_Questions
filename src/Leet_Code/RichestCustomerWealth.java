@@ -1,6 +1,7 @@
+package Leet_Code;
 
 import java.util.*;
-public class Main
+public class RichestCustomerWealth
 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);

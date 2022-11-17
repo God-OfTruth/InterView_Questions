@@ -1,7 +1,8 @@
+package Leet_Code;
 
 import java.util.Scanner;
 import java.util.ArrayList;
-public class Cammel_case {
+public class camelCase {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);

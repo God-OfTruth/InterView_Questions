@@ -1,4 +1,4 @@
-package GFG;
+package Leet_Code;
 
 public class ClosestPrimeToNum {
     public static void main(String[] args) {
