@@ -1,49 +1,28 @@
 package GFG;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SubArrayWithGivenSum {
-    public static void main(String[] args) {
-        System.out.println(subArraySum(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 10, 15));
-    }
+	public static void main(String[] args) {
+		int[] arr = {1, 2, 3, 7, 5};
+		System.out.println(subArraySum(arr, arr.length, 12));
+	}
 
-    //    public static ArrayList<Integer> subArraySum(int[] arr, int n, int s) {
-//        int sum = 0;
-//        ArrayList<Integer> res = new ArrayList<>();
-//        for (int i=0; i<n; i++){
-//            int j;
-//            for (j=i; j<n; j++) {
-//                sum+=arr[j];
-//                if (s == sum) break;
-//            }
-//            if (sum == s) {
-//                res.add(i+1);
-//                res.add(j+1);
-//                break;
-//            }
-//            sum = 0;
-//        }
-//        if (!res.isEmpty())
-//            return res;
-//        res.add(-1);
-//        return res;
-//    }
-    public static ArrayList<Integer> subArraySum(int[] arr, int n, int s) {
-        int sum = 0;
-        ArrayList<Integer> res = new ArrayList<>();
-        int j = 0;
-        for (int i = 0; i < n; i++) {
-            sum += arr[i];
-            while (sum > s && i > j) {
-                sum -= arr[j];
-                j++;
-            }
-            if (sum == s) {
-                res.add(j + 1);
-                res.add(i + 1);
-                break;
-            }
-        }
-        return res;
-    }
+	public static ArrayList<Integer> subArraySum(int[] arr, int n, int s) {
+		int currentsum = arr[0], begin = 0, i;
+		for (i = 1; i <= n; i++) {
+			while (currentsum > s && begin < i - 1) {
+				currentsum = currentsum - arr[begin];
+				begin++;
+			}
+			if (currentsum == s) {
+				int p = i - 1;
+				return new ArrayList<>(List.of(begin+1, p+1));
+			}
+			if (i < n)
+				currentsum = currentsum + arr[i];
+		}
+		return new ArrayList<>(List.of(-1));
+	}
 }
