@@ -3,7 +3,7 @@ package hacker_earth;
 import java.util.Scanner;
 
 class Divisibility {
-    public static void main(String args[] ) throws Exception {
+    public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int[] arr = new int[n];

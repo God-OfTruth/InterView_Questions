@@ -27,7 +27,6 @@ public class Nagarro {
             String r = reverse(s);
             res.append(" ").append(r);
         }
-        String result = res.substring(1);;
-        return result;
+        return res.substring(1);
     }
 }
