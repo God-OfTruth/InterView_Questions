@@ -6,7 +6,7 @@ import java.util.List;
 public class ZigZagString {
 	public static void main(String[] args) {
 		String s = "PAYPALISHIRING";
-		int numRows = 3;
+		int numRows = 5;
 		System.out.println(convert(s, numRows));
 	}
 
