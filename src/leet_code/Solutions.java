@@ -17,7 +17,7 @@ public class Solutions {
 				.map(Integer::parseInt)
 				.collect(toList());
 
-		int result = Result.jumpingOnClouds(c);
+		int result = jumpingOnClouds.jumpingOnClouds(c);
 
 		bufferedWriter.write(String.valueOf(result));
 		bufferedWriter.newLine();

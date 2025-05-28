@@ -13,35 +13,37 @@ public class InsertDelGetRandom {
 		System.out.println(set.insert(2));
 		System.out.println(set.getRandom());
 	}
+
+	static class RandomizedSet {
+		final Set<Integer> set;
+		final List<Integer> integers;
+
+		public RandomizedSet() {
+			this.set = new HashSet<>();
+			this.integers = new LinkedList<>();
+		}
+
+		public boolean insert(int val) {
+			if (set.add(val)) {
+				integers.add(val);
+				return true;
+			}
+			return false;
+		}
+
+		public boolean remove(int val) {
+			if (set.remove(val)){
+				integers.remove((Integer) val);
+				return true;
+			}
+			return false;
+		}
+
+		public int getRandom() {
+			Random random = new Random();
+			return integers.get(random.nextInt(set.size()));
+		}
+	}
 }
 
-class RandomizedSet {
-	final Set<Integer> set;
-	final List<Integer> integers;
 
-	public RandomizedSet() {
-		this.set = new HashSet<>();
-		this.integers = new LinkedList<>();
-	}
-
-	public boolean insert(int val) {
-		if (set.add(val)) {
-			integers.add(val);
-			return true;
-		}
-		return false;
-	}
-
-	public boolean remove(int val) {
-		if (set.remove(val)){
-			integers.remove((Integer) val);
-			return true;
-		}
-		return false;
-	}
-
-	public int getRandom() {
-		Random random = new Random();
-		return integers.get(random.nextInt(set.size()));
-	}
-}

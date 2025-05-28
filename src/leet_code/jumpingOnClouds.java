@@ -2,7 +2,11 @@ package leet_code;
 
 import java.util.List;
 
-class Result {
+class jumpingOnClouds {
+
+    jumpingOnClouds(){
+
+    }
 
     /*
      * Complete the 'jumpingOnClouds' function below.

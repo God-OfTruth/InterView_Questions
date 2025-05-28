@@ -2,7 +2,7 @@ package leet_code;
 
 public class _55_JumpGame {
 	public static void main(String[] args) {
-		System.out.println(canJump(new int[]{3, 2, 1, 0, 4}));
+		System.out.println(canJump(new int[]{3, 2, 1, 1, 4}));
 	}
 
 	public static boolean canJump(int[] nums) {

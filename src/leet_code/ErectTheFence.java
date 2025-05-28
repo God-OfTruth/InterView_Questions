@@ -57,14 +57,8 @@ public class ErectTheFence {
 		if (crossProduct > 0) return 1;
 		return 0;
 	}
-}
 
-class Point {
-	final int x;
-	final int y;
-
-	Point(int x, int y) {
-		this.x = x;
-		this.y = y;
+	record Point(int x, int y) {
 	}
 }
+

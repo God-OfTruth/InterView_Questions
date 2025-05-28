@@ -9,7 +9,7 @@ public class WordSearch2 {
 		char[][] chars = {{'o', 'o', 'a', 'n'}, {'e', 't', 'a', 'e'}, {'i', 'h', 'k', 'r'}, {'i', 'f', 'l', 'v'}};
 		String[] words = {"eat"};
 		System.out.println(exist(chars, "eat"));
-//		findWords(chars, words).forEach(System.out::println);
+		findWords(chars, words).forEach(System.out::println);
 	}
 
 	public static List<String> findWords(char[][] board, String[] words) {
@@ -61,25 +61,27 @@ public class WordSearch2 {
 		}
 		board[i][j] = c;
 	}
-}
 
-class Trie {
-	public final Trie[] children;
-	public boolean endOfWord;
+	static class Trie {
+		public final Trie[] children;
+		public boolean endOfWord;
 
-	public Trie() {
-		endOfWord = false;
-		children = new Trie[26];
-		for (int i = 0; i < 26; ++i)
-			children[i] = null;
-	}
-
-	void insert(String word) {
-		Trie curr = this;
-		for (char c : word.toCharArray()) {
-			if (curr.children[c - 'a'] == null) curr.children[c - 'a'] = new Trie();
-			curr = curr.children[c - 'a'];
+		public Trie() {
+			endOfWord = false;
+			children = new Trie[26];
+			for (int i = 0; i < 26; ++i)
+				children[i] = null;
 		}
-		curr.endOfWord = true;
+
+		void insert(String word) {
+			Trie curr = this;
+			for (char c : word.toCharArray()) {
+				if (curr.children[c - 'a'] == null) curr.children[c - 'a'] = new Trie();
+				curr = curr.children[c - 'a'];
+			}
+			curr.endOfWord = true;
+		}
 	}
 }
+
+
